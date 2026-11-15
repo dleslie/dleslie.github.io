@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dleslie // ~</title>
+  <meta name="description" content="Personal and professional site of Dan Leslie (dleslie): notes from org-mode and public GitHub repositories.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <pre class="finger-banner" aria-label="Site identity"><code>$ finger dleslie@github
+Login: dleslie                          Name: Dan Leslie
+Directory: https://dleslie.github.io    Plan: <a href="blog.org">~/blog.org</a></code></pre>
+
+      <nav class="top-bar" aria-label="Primary navigation">
+        <div class="nav-links">
+          <a href="#feed">[01: feed]</a>
+          <a href="#repositories">[02: repositories]</a>
+          <a href="https://github.com/dleslie" rel="noopener">[github]</a>
+        </div>
+        <div class="nav-meta">
+          <span id="github-status" class="status-pill" aria-live="polite">github: querying...</span>
+          <button id="theme-toggle" type="button" class="cmd-btn" aria-label="Toggle color theme">[theme: auto]</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="feed" class="section" aria-labelledby="feed-heading">
+        <div class="section-header">
+          <h2 id="feed-heading">01 // FEED</h2>
+          <div class="controls" role="group" aria-label="Filter feed items">
+            <button type="button" class="cmd-btn is-active" data-feed-filter="all">[all]</button>
+            <button type="button" class="cmd-btn" data-feed-filter="blog">[blog]</button>
+            <button type="button" class="cmd-btn" data-feed-filter="repo">[repos]</button>
+          </div>
+        </div>
+        <div id="feed-list" class="feed-list">
+          <p class="muted">Loading feed...</p>
+        </div>
+        <div id="feed-more-wrap" class="feed-more-wrap" hidden>
+          <button id="feed-more-btn" type="button" class="cmd-btn">[show older entries]</button>
+        </div>
+      </section>
+
+      <section id="repositories" class="section" aria-labelledby="repos-heading">
+        <div class="section-header">
+          <h2 id="repos-heading">02 // REPOSITORIES</h2>
+          <div class="controls" role="group" aria-label="Sort repositories">
+            <span class="muted sort-label">order:</span>
+            <button type="button" class="cmd-btn is-active" data-repo-sort="updated">[last updated ↓]</button>
+            <button type="button" class="cmd-btn" data-repo-sort="starred">[starred ↓]</button>
+            <button type="button" class="cmd-btn" data-repo-sort="name">[name ↑]</button>
+          </div>
+        </div>
+        <p id="repo-summary" class="muted repo-summary">Querying public repositories for dleslie...</p>
+        <div class="table-wrap">
+          <table class="repo-table">
+            <thead>
+              <tr>
+                <th scope="col">Repository</th>
+                <th scope="col" class="col-dest">Target</th>
+                <th scope="col" class="col-num">Stars</th>
+                <th scope="col" class="col-date">Updated</th>
+              </tr>
+            </thead>
+            <tbody id="repo-tbody">
+              <tr>
+                <td colspan="4" class="muted">Loading repositories...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>EOF // dleslie.github.io // static html + <a href="blog.org">blog.org</a> + github api</span>
+    </footer>
+  </div>
+
+  <script src="data/posts.js"></script>
+  <script src="data/github-fallback.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

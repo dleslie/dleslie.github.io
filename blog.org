@@ -1,0 +1,34 @@
+#+TITLE: dleslie // log
+#+AUTHOR: Dan Leslie
+#+OPTIONS: toc:nil num:nil
+
+* Welcome to the wire :meta:web:
+:PROPERTIES:
+:DATE: 2026-11-14
+:END:
+
+This site is built in the spirit of the pre-HTTP internet: plain text first,
+minimal markup, zero trackers, and no client-side framework bloat.
+
+Blog entries live in =blog.org= and are exported to static data via =make=
+using Emacs in batch mode. Public repository metadata and recent activity
+are queried directly from GitHub's API for =dleslie=.
+
+If you are looking for a project's live page, clicking a repository in the
+table below will route to its GitHub Pages deployment when available, or
+directly to its source repository otherwise.
+
+* Notes on building static things to last :engineering:
+:PROPERTIES:
+:DATE: 2026-11-10
+:END:
+
+A personal site should outlive the current decade's build tools:
+
+- Keep the source in plain text (=org-mode=).
+- Keep the build step a single =Makefile= invoking standard tools.
+- Keep the output static HTML, CSS, and vanilla JavaScript.
+
+#+begin_src text
+emacs -Q --batch -> data/posts.json + data/posts.js -> index.html
+#+end_src
